@@ -8,10 +8,10 @@
 
 Установите кастомизированный YAML файл K8s Dashboard:
 
-```bash
+```plain
 kubectl apply -f /root/dashboard.yaml
 kubectl -n kubernetes-dashboard wait --for=condition=ready pod --all
-```
+```{{exec}}
 
 ## Модификации конфигурации
 
@@ -50,19 +50,19 @@ spec:
 
 Создайте ServiceAccount и используйте токен:
 
-```bash
+```plain
 kubectl -n kubernetes-dashboard create sa admin-user
 kubectl create clusterrolebinding admin-user --clusterrole cluster-admin --serviceaccount kubernetes-dashboard:admin-user
 kubectl -n kubernetes-dashboard create token admin-user
-```
+```{{exec}}
 
 ## Настройка проброса портов
 
 Далее нужно запустить port-forward:
 
-```bash
+```plain
 kubectl -n kubernetes-dashboard port-forward service/kubernetes-dashboard 9090:9090 --address 0.0.0.0
-```
+```{{exec}}
 
 ## Доступ к панели управления
 
