@@ -7,9 +7,13 @@
     },
     "steps": [
       {
-        "title": "Run and access",
+        "title": "Запуск и доступ",
         "text": "step1.md",
         "verify": "verify/step1.sh"
+      },
+      {
+        "title": "Получение кода",
+        "text": "step2.md"
       }
     ],
     "assets": {
